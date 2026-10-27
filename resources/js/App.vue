@@ -75,7 +75,7 @@ watch(
       />
     </ul>
 
-    <button v-if="groceryList.length > 0" @click="clearList">
+    <button v-if="groceryList.length > 0" class="clear-btn" @click="clearList">
       Clear List
     </button>
 
@@ -103,52 +103,3 @@ body {
 h1 {
   text-align: center;
   color: #2d6a4f;
-  margin-bottom: 16px;
-}
-
-.form-box {
-  margin-top: 12px;
-}
-
-input {
-  padding: 8px;
-  margin: 4px 4px 4px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-button {
-  padding: 8px 12px;
-  background: #2d6a4f;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #1b4332;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.error {
-  color: red;
-}
-
-.total {
-  text-align: center;
-  margin-top: 16px;
-}
-</style>
