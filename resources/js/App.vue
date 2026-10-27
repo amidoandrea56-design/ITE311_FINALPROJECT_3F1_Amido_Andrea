@@ -85,7 +85,7 @@ watch(
       />
     </ul>
 
-    <p v-if="highestItem">
+    <p v-if="highestItem" class="highest">
       Most expensive: {{ highestItem.name }} (₱{{ highestItem.price }})
     </p>
 
@@ -157,8 +157,11 @@ li {
   color: red;
 }
 
-.total {
-  text-align: center;
-  margin-top: 16px;
+.highest {
+  color: #b7791f;
+  font-weight: bold;
+  margin-top: 12px;
 }
-</style>
+
+.total {
+  text-align:
