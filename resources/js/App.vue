@@ -71,7 +71,7 @@ watch(
       />
     </ul>
 
-    <p v-if="groceryList.length > 0">
+    <p v-if="groceryList.length > 0" class="item-count">
       Items: {{ groceryList.length }}
     </p>
 
@@ -141,6 +141,12 @@ li {
 
 .error {
   color: red;
+}
+
+.item-count {
+  color: #555;
+  font-weight: bold;
+  margin-top: 12px;
 }
 
 .total {
