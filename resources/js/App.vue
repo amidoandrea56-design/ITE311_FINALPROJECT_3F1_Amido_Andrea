@@ -41,6 +41,20 @@ const totalPrice = computed(() => {
   return total.toFixed(2)
 })
 
+const highestItem = computed(() => {
+  if (groceryList.value.length === 0) {
+    return null
+  }
+
+  let highest = groceryList.value[0]
+  for (const item of groceryList.value) {
+    if (item.price > highest.price) {
+      highest = item
+    }
+  }
+  return highest
+})
+
 watch(
   () => groceryList.value.length,
   (newCount) => {
@@ -77,6 +91,10 @@ watch(
 
     <p v-if="groceryList.length > 0" class="item-count">
       Items: {{ groceryList.length }}
+    </p>
+
+    <p v-if="highestItem" class="highest">
+      Most expensive: {{ highestItem.name }} (₱{{ highestItem.price }})
     </p>
 
     <button v-if="groceryList.length > 0" class="clear-btn" @click="clearList">
@@ -158,6 +176,12 @@ li {
 
 .item-count {
   color: #555;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.highest {
+  color: #b7791f;
   font-weight: bold;
   margin-top: 12px;
 }
